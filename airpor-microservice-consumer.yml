@@ -3,17 +3,15 @@ spring:
     active:
     - dev 
 ---
+server:
+  port: 18080
 spring:
   profiles: dev
   application:
-    name: airpor-microservice-consumer-dev
-server:
-  port: 18080
-
+    name: airport-microservice-consumer-dev
 feign:
   hystrix:
     enabled: true
-
 spring:
   cloud:
     config:
@@ -27,17 +25,15 @@ spring:
         healthCheckInterval: 5s
 
 ---
+server:
+  port: 18081
 spring:
   profiles: test
   application:
     name: airpor-microservice-consumer-test
-server:
-  port: 18081
-
 feign:
   hystrix:
     enabled: true
-
 spring:
   cloud:
     config:
