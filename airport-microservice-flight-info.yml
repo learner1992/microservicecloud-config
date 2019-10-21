@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active:
+    - dev 
+---
+server:
+  port: 18080
+spring:
+  profiles: dev
+  application:
+    name: airport-microservice-flight-info-dev
+  cloud:
+    config:
+      fail-fast: true
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        # instanceId: ${spring.application.name}:${server.port}:${random.value}
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 5s
+feign:
+  hystrix:
+    enabled: true
+  
+
+---
+server:
+  port: 18080
+spring:
+  profiles: test
+  application:
+    name: airport-microservice-consumer-test
+  cloud:
+    config:
+      fail-fast: true
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instanceId: ${spring.application.name}:${server.port}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 5s
+feign:
+  hystrix:
+    enabled: true
+
