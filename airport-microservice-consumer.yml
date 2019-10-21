@@ -9,10 +9,6 @@ spring:
   profiles: dev
   application:
     name: airport-microservice-consumer-dev
-feign:
-  hystrix:
-    enabled: true
-spring:
   cloud:
     config:
       fail-fast: true
@@ -23,6 +19,10 @@ spring:
         instanceId: ${spring.application.name}:${server.port}:${random.value}
         healthCheckPath: actuator/health
         healthCheckInterval: 5s
+feign:
+  hystrix:
+    enabled: true
+  
 
 ---
 server:
@@ -31,10 +31,6 @@ spring:
   profiles: test
   application:
     name: airport-microservice-consumer-test
-feign:
-  hystrix:
-    enabled: true
-spring:
   cloud:
     config:
       fail-fast: true
@@ -45,3 +41,7 @@ spring:
         instanceId: ${spring.application.name}:${server.port}
         healthCheckPath: actuator/health
         healthCheckInterval: 5s
+feign:
+  hystrix:
+    enabled: true
+
