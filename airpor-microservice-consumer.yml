@@ -1,3 +1,12 @@
+spring:
+  profiles:
+    active:
+    - dev 
+---
+spring:
+  profiles: dev
+  application:
+    name: airpor-microservice-consumer-dev
 server:
   port: 18080
 
@@ -17,3 +26,26 @@ spring:
         healthCheckPath: /health
         healthCheckInterval: 5s
 
+---
+spring:
+  profiles: test
+  application:
+    name: airpor-microservice-consumer-test
+server:
+  port: 18081
+
+feign:
+  hystrix:
+    enabled: true
+
+spring:
+  cloud:
+    config:
+      fail-fast: true
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instanceId: ${spring.application.name}:${server.port}
+        healthCheckPath: /health
+        healthCheckInterval: 5s
