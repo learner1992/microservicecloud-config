@@ -27,11 +27,11 @@ feign:
 
 ---
 server:
-  port: 18080
+  port: 18081
 spring:
   profiles: test
   application:
-    name: airport-microservice-consumer-test
+    name: airport-microservice-consumer-dev
   cloud:
     config:
       fail-fast: true
@@ -39,7 +39,7 @@ spring:
       host: localhost
       port: 8500
       discovery:
-        instanceId: ${spring.application.name}:${server.port}
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
         healthCheckPath: /actuator/health
         healthCheckInterval: 5s
 feign:
