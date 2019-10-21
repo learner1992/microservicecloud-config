@@ -17,7 +17,7 @@ spring:
       port: 8500
       discovery:
         instanceId: ${spring.application.name}:${server.port}:${random.value}
-        healthCheckPath: actuator/health
+        healthCheckPath: /actuator/health
         healthCheckInterval: 5s
 feign:
   hystrix:
@@ -39,7 +39,7 @@ spring:
       port: 8500
       discovery:
         instanceId: ${spring.application.name}:${server.port}
-        healthCheckPath: actuator/health
+        healthCheckPath: /actuator/health
         healthCheckInterval: 5s
 feign:
   hystrix:
