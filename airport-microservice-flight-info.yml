@@ -31,7 +31,7 @@ server:
 spring:
   profiles: test
   application:
-    name: airport-microservice-consumer-dev
+    name: airport-microservice-flight-info-dev
   cloud:
     config:
       fail-fast: true
