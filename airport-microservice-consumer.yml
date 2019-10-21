@@ -4,7 +4,7 @@ spring:
     - dev 
 ---
 server:
-  port: 18080
+  port: 80
 spring:
   profiles: dev
   application:
@@ -21,16 +21,16 @@ spring:
       port: 8500
       discovery:
         instanceId: ${spring.application.name}:${server.port}:${random.value}
-        healthCheckPath: /health
+        healthCheckPath: actuator/health
         healthCheckInterval: 5s
 
 ---
 server:
-  port: 18081
+  port: 80
 spring:
   profiles: test
   application:
-    name: airpor-microservice-consumer-test
+    name: airport-microservice-consumer-test
 feign:
   hystrix:
     enabled: true
@@ -43,5 +43,5 @@ spring:
       port: 8500
       discovery:
         instanceId: ${spring.application.name}:${server.port}
-        healthCheckPath: /health
+        healthCheckPath: actuator/health
         healthCheckInterval: 5s
