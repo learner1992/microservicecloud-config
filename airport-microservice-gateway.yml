@@ -21,16 +21,16 @@ spring:
       instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
       healthCheckPath: /actuator/health
 
-# zuul:
-#   routes:
-#     # user-service:
-#     #   path: /microservicecloud-dept/**
-#     #   serviceId: user-service2
-#     mydept.serviceId: airport-microservice-flight-info-dev
-#     mydept.path: /fligth/**
-#   ignored-services: '*'
-#   #公共前缀
-#   prefix: /airport
+zuul:
+  routes:
+    # user-service:
+    #   path: /microservicecloud-dept/**
+    #   serviceId: user-service2
+    mydept.serviceId: airport-microservice-flight-info-dev
+    mydept.path: /flight/**
+  ignored-services: '*'
+  #公共前缀
+  prefix: /airport
 
 info:
   app.name: airport-microservice-gateway
@@ -62,7 +62,7 @@ zuul:
     #   path: /microservicecloud-dept/**
     #   serviceId: user-service2
     mydept.serviceId: airport-microservice-flight-info-dev
-    mydept.path: /fligth/**
+    mydept.path: /flight/**
   ignored-services: '*'
   #公共前缀
   prefix: /airport
