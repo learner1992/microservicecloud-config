@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active:
+    - dev 
+---
+server:
+  port: 9001
+spring:
+  profiles: dev
+  application:
+    name: airport-microservice-hystrix-dashboarad
+  instance:
+    instance-id: airport-microservice-hystrix-dashboarad
+    prefer-ip-address: true
+  consul:
+    host: localhost
+    port: 8500
+    discovery:
+      register: true
+      prefer-ip-address: true
+      instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+      healthCheckPath: /actuator/health
+      healthCheckInterval: 5s
