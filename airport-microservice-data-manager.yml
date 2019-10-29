@@ -1,0 +1,76 @@
+spring:
+  profiles:
+    active:
+    - dev 
+---
+server:
+  port: 18090
+spring:
+  profiles: dev
+  application:
+    name: airport-microservicecloud-data-manager
+  instance:
+    instance-id: airport-microservicecloud-data-manager
+    prefer-ip-address: true
+  consul:
+    host: localhost
+    port: 8500
+    discovery:
+      register: true
+      prefer-ip-address: true
+      instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+      healthCheckPath: /actuator/health
+      healthCheckInterval: 5s
+
+zuul:
+  routes:
+    # user-service:
+    #   path: /microservicecloud-dept/**
+    #   serviceId: user-service2
+    mydept.serviceId: airport-microservicecloud-data-manager
+    mydept.path: /data/**
+  ignored-services: '*'
+  #公共前缀
+  prefix: /airport
+  #示例http://localhost:9527/airport/flight/home
+
+# info:
+#   app.name: airport-microservicecloud-data-manager
+#   company.name: www.maplecloudy.com
+#   build.artifactId: $project.artifactId$
+#   build.version: $project.version$
+---
+server:
+  port: 18091
+spring:
+  profiles: test
+  application:
+    name: airport-microservicecloud-data-manager
+  instance:
+    instance-id: airport-microservicecloud-data-manager
+    prefer-ip-address: true
+  consul:
+    host: localhost
+    port: 8500
+    discovery:
+      register: true
+      prefer-ip-address: true
+      instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+      healthCheckPath: /actuator/health
+
+zuul:
+  routes:
+    # user-service:
+    #   path: /microservicecloud-dept/**
+    #   serviceId: user-service2
+    mydept.serviceId: airport-microservicecloud-data-manager
+    mydept.path: /data/**
+  ignored-services: '*'
+  #公共前缀
+  prefix: /airport
+
+# info:
+#   app.name: airport-microservice-gateway
+#   company.name: www.maplecloudy.com
+#   build.artifactId: $project.artifactId$
+#   build.version: $project.version$
