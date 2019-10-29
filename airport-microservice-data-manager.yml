@@ -8,9 +8,9 @@ server:
 spring:
   profiles: dev
   application:
-    name: airport-microservicecloud-data-manager
+    name: airport-microservice-data-manager
   instance:
-    instance-id: airport-microservicecloud-data-manager
+    instance-id: airport-microservice-data-manager
     prefer-ip-address: true
   consul:
     host: localhost
@@ -27,7 +27,7 @@ zuul:
     # user-service:
     #   path: /microservicecloud-dept/**
     #   serviceId: user-service2
-    mydept.serviceId: airport-microservicecloud-data-manager
+    mydept.serviceId: airport-microservice-data-manager
     mydept.path: /data/**
   ignored-services: '*'
   #公共前缀
@@ -45,9 +45,9 @@ server:
 spring:
   profiles: test
   application:
-    name: airport-microservicecloud-data-manager
+    name: airport-microservice-data-manager
   instance:
-    instance-id: airport-microservicecloud-data-manager
+    instance-id: airport-microservice-data-manager
     prefer-ip-address: true
   consul:
     host: localhost
@@ -63,7 +63,7 @@ zuul:
     # user-service:
     #   path: /microservicecloud-dept/**
     #   serviceId: user-service2
-    mydept.serviceId: airport-microservicecloud-data-manager
+    mydept.serviceId: airport-microservice-data-manager
     mydept.path: /data/**
   ignored-services: '*'
   #公共前缀
