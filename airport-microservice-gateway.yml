@@ -22,17 +22,17 @@ spring:
       healthCheckPath: /actuator/health
       healthCheckInterval: 5s
 
-zuul:
-  routes:
-    # user-service:
-    #   path: /microservicecloud-dept/**
-    #   serviceId: user-service2
-    mydept.serviceId: airport-microservice-flight-info
-    mydept.path: /flight/**
-  ignored-services: '*'
-  #公共前缀
-  prefix: /airport
-  #示例http://localhost:9527/airport/flight/home
+# zuul:
+#   routes:
+#     # user-service:
+#     #   path: /microservicecloud-dept/**
+#     #   serviceId: user-service2
+#     mydept.serviceId: airport-microservice-flight-info
+#     mydept.path: /flight/**
+#   ignored-services: '*'
+#   #公共前缀
+#   prefix: /airport
+#   #示例http://localhost:9527/airport/flight/home
 
 info:
   app.name: airport-microservice-gateway
