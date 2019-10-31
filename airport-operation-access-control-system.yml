@@ -8,7 +8,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: airport-operation-access-control-system-dev
+    name: airport-operation-access-control-system
   cloud:
     config:
       fail-fast: true
@@ -31,7 +31,7 @@ server:
 spring:
   profiles: test
   application:
-    name: airport-opration-access-control-system-dev
+    name: airport-opration-access-control-system
   cloud:
     config:
       fail-fast: true
