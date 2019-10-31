@@ -5,6 +5,8 @@ spring:
 ---
 server:
   port: 9527
+zuul:
+  address: http://hadoop03:9527/
 spring:
   profiles: dev
   application:
