@@ -4,7 +4,7 @@ spring:
     - dev 
 ---
 server:
-  port: 18090
+  port: ${random.int[10000,10100]}
 spring:
   profiles: dev
   application:
@@ -41,7 +41,7 @@ zuul:
 #   build.version: $project.version$
 ---
 server:
-  port: 18091
+  port: ${random.int[10000,10100]}
 spring:
   profiles: test
   application:
