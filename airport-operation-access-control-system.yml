@@ -4,11 +4,11 @@ spring:
     - dev 
 ---
 server:
-  port: 18080
+  port: 18090
 spring:
   profiles: dev
   application:
-    name: airport-microservice-flight-info-dev
+    name: airport-operation-access-control-system-dev
   cloud:
     config:
       fail-fast: true
@@ -27,11 +27,11 @@ feign:
 
 ---
 server:
-  port: 18081
+  port: 18091
 spring:
   profiles: test
   application:
-    name: airport-microservice-flight-info-dev
+    name: airport-opration-access-control-system-dev
   cloud:
     config:
       fail-fast: true
