@@ -63,7 +63,7 @@ zuul:
     # user-service:
     #   path: /microservicecloud-dept/**
     #   serviceId: user-service2
-    mydept.serviceId: airport-microservice-flight-info
+    mydept.serviceId: airport-operation-flight-information
     mydept.path: /flight/**
   ignored-services: '*'
   #公共前缀

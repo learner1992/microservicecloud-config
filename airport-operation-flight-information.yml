@@ -8,7 +8,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: airport-opration-flight-information-dev
+    name: airport-opration-flight-information
   cloud:
     config:
       fail-fast: true
@@ -31,7 +31,7 @@ server:
 spring:
   profiles: test
   application:
-    name: airport-opration-flight-information-dev
+    name: airport-opration-flight-information
   cloud:
     config:
       fail-fast: true
