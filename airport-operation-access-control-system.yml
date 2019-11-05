@@ -4,11 +4,11 @@ spring:
     - dev 
 ---
 server:
-  port: 18900
+  port: 18090
 spring:
   profiles: dev
   application:
-    name: airport-operation-credentials-management-system
+    name: airport-operation-access-control-system
   cloud:
     config:
       fail-fast: true
