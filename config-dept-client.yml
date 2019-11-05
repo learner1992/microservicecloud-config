@@ -39,3 +39,41 @@ info:
   company.name: www.maplecloudy.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+---
+server:
+  port: 8001
+spring:
+  profiles: test
+  application:
+    name: config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloudDB02
+    username: ogc
+    password: maplecloudy
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-packaage: com.ogc.springcloud.entites
+  mapper-locations:
+  - claasspath:mybatis/mapper/**/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: microservicecloud-dept8001
+    prefer-ip-address: true     #访问路径可以显示IP地址
+    lease-renewal-interval-in-seconds: 1 #每隔1s向服务端发送心跳，证明自己存活
+    lease-expiration-duration-in-seconds: 2 #告诉服务端2s之内没有发送心跳就代表自己死亡，请求踢掉
+info:
+  app.name: ogc-microservicecloud
+  company.name: www.maplecloudy.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
