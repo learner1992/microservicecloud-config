@@ -8,7 +8,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: airport-opration-flight-information
+    name: airport-operation-flight-information
   cloud:
     config:
       fail-fast: true
