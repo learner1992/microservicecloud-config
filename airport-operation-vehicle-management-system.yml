@@ -4,11 +4,11 @@ spring:
     - dev 
 ---
 server:
-  port: 18090
+  port: 18150
 spring:
   profiles: dev
   application:
-    name: airport-operation-access-control-system
+    name: airport-operation-vehicle-management-system
   cloud:
     config:
       fail-fast: true
@@ -24,4 +24,3 @@ feign:
   hystrix:
     enabled: true
   
-
