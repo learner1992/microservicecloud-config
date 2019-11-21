@@ -6,7 +6,7 @@ spring:
 server:
   # port: ${random.int[10000,10100]}
   port: 18090
-zuul-address: http://hadoop02:9527/
+zuul-address: http://hadoop01:9527/
 spring:
   profiles: dev
   application:
