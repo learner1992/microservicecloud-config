@@ -33,10 +33,11 @@ turbine:                                       #添加所需要的Hystrix项目
       skipLineLogic:
         enabled: false
         latencyThreshold: 100000
-  # cluster-name-expression: "'airport-microservicecloud-center'"
+  cluster-name-expression: new String("default")
 #这个参数必须配置，每个服务群都是一个单独的集群，监控多个可以多写用,分隔
   aggregator:
-    cluster-config: airport-microservicecloud-center,airport-microservicecloud-data-manager,airport-operation-access-control-system,airport-operation-credentials-management-system,airport-operation-face-recognition-system,airport-operation-flight-display-system,airport-operation-flight-equipment,airport-operation-information,airport-operation-safety-maanagement-cloud,airport-operation-taxi,airport-operation-track-analysis,airport-operation-vehicle-management-system
+    cluster-config: default
+    # cluster-config: airport-microservicecloud-center,airport-microservicecloud-data-manager,airport-operation-access-control-system,airport-operation-credentials-management-system,airport-operation-face-recognition-system,airport-operation-flight-display-system,airport-operation-flight-equipment,airport-operation-information,airport-operation-safety-maanagement-cloud,airport-operation-taxi,airport-operation-track-analysis,airport-operation-vehicle-management-system
 #加下面这参数base-path会影响consul注册？？
 management:
   endpoints:
