@@ -13,7 +13,7 @@ spring:
       discovery:
         register: true
         prefer-ip-address: true
-        instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
        #        service-name: ${spring.application.name}
         healthCheckPath: /actuator/health
   messages:
