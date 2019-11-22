@@ -6,6 +6,7 @@ spring:
 spring:
   application:
     name: airport-microservicecloud-center
+  profiles: dev
   cloud:
     consul:
       host: hadoop01
