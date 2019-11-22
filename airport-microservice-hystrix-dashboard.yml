@@ -13,7 +13,7 @@ spring:
     instance-id: airport-microservice-hystrix-dashboarad
     prefer-ip-address: true
   consul:
-    host: localhost
+    host: hadoop01
     port: 8500
     discovery:
       register: true
@@ -21,3 +21,4 @@ spring:
       instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
       healthCheckPath: /actuator/health
       healthCheckInterval: 5s
+zuul-address: http://hadoop01:9527/

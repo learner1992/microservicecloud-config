@@ -1,0 +1,51 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:             #默认端口
+  port: 18020
+spring:                   #业务名字
+  profiles: dev
+  application:
+    name: airport-turbine
+  cloud:
+    consul:
+      host: hadoop01
+      port: 8500
+      discovery:
+        register: true
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+        service-name: ${spring.application.name}
+        port: ${server.port}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+#    config:
+#      fail-fast: true
+turbine:                                       #添加所需要的Hystrix项目
+  app-config: airport-microservicecloud-center,airport-microservicecloud-data-manager,airport-operation-access-control-system,airport-operation-credentials-management-system,airport-operation-face-recognition-system,airport-operation-flight-display-system,airport-operation-flight-equipment,airport-operation-information,airport-operation-safety-maanagement-cloud,airport-operation-taxi,airport-operation-track-analysis,airport-operation-vehicle-management-system
+  combine-host-port: true
+#  cluster-name-expression: "'default'"  #不需要这个参数，否则会报错，consul没有集群c
+  instanceUrlSuffix: /hystrix.stream
+#  default: /hystrix.stream
+  InstanceMonitor:
+    eventStream:
+      skipLineLogic:
+        enabled: false
+        latencyThreshold: 100000
+  # cluster-name-expression: "'airport-microservicecloud-center'"
+#这个参数必须配置，每个服务群都是一个单独的集群，监控多个可以多写用,分隔
+  aggregator:
+    cluster-config: airport-microservicecloud-center,airport-microservicecloud-data-manager,airport-operation-access-control-system,airport-operation-credentials-management-system,airport-operation-face-recognition-system,airport-operation-flight-display-system,airport-operation-flight-equipment,airport-operation-information,airport-operation-safety-maanagement-cloud,airport-operation-taxi,airport-operation-track-analysis,airport-operation-vehicle-management-system
+#加下面这参数base-path会影响consul注册？？
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#      base-path: /
+logging:
+  level:
+    root: INFO
+zuul-address: http://hadoop01:9527/
+
