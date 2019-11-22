@@ -6,6 +6,16 @@ spring:
 spring:
   application:
     name: airport-microservicecloud-center
+  cloud:
+    consul:
+      host: hadoop01
+      port: 8500
+      discovery:
+        register: true
+        prefer-ip-address: true
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+       #        service-name: ${spring.application.name}
+        healthCheckPath: /actuator/health
   messages:
     basename: i18n/messages
     encoding: utf-8
