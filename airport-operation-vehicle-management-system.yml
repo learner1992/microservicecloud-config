@@ -13,7 +13,7 @@ spring:
     config:
       fail-fast: true
     consul:
-      host: hadoop01s
+      host: hadoop01
       port: 8500
       discovery:
         # instanceId: ${spring.application.name}:${server.port}:${random.value}
