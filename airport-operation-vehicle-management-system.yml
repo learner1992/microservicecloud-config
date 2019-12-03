@@ -29,7 +29,7 @@ zuul-address: http://hadoop01:9527/
 server:
   port: 18150
 spring:
-  profiles: dev
+  profiles: test
   application:
     name: airport-operation-vehicle-management-system
   cloud:
