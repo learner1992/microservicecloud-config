@@ -24,5 +24,28 @@ feign:
   hystrix:
     enabled: true
 zuul-address: http://hadoop01:9527/
+
+---
+server:
+  port: 18090
+spring:
+  profiles: test
+  application:
+    name: airport-operation-access-control-system
+  cloud:
+    config:
+      fail-fast: true
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 5s
+feign:
+  hystrix:
+    enabled: true
+zuul-address: http://192.168.0.116:9527/
+
   
 

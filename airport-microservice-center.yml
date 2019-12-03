@@ -68,3 +68,70 @@ management:
       exposure:
         include: "*"
       base-path: /
+
+---
+spring:
+  application:
+    name: airport-microservicecloud-center
+  profiles: test
+  cloud:
+    consul:
+      host: 192.168.0.113
+      port: 8500
+      discovery:
+        register: true
+        prefer-ip-address: true
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+       #        service-name: ${spring.application.name}
+        healthCheckPath: /actuator/health
+  messages:
+    basename: i18n/messages
+    encoding: utf-8
+  datasource:
+    #    url: jdbc:mysql://47.107.235.26:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://hadoop01:3306/maplecloudy?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+    username: maplecloudy
+    password: maplecloudy
+    platform: h2
+    initialization-mode: always
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+      write-null-map-values: false
+      fail-on-empty-beans: false
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1500MB
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        enable_lazy_load_no_trans: true
+        show_sql: false
+    show-sql: true
+    open-in-view: false
+server:
+  port: 28088
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+zuul-address: http://192.168.0.116:9527/
+security:
+  basic:
+    enabled: false
+management:
+#  security:
+#    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /
