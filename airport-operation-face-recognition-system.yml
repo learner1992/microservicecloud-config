@@ -29,7 +29,7 @@ zuul-address: http://hadoop01:9527/
 server:
   port: 18120
 spring:
-  profiles: dev
+  profiles: test
   application:
     name: airport-operation-face-recognition-system
   cloud:
