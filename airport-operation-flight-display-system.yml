@@ -45,4 +45,5 @@ spring:
 feign:
   hystrix:
     enabled: true
-zuul-address: http://192.168.0.116:9527/
+# zuul-address: http://192.168.0.116:9527/
+zuul-address: http://192.168.0.113:9527/

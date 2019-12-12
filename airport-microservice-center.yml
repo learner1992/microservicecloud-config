@@ -123,7 +123,8 @@ logging:
   level:
     root: info
     org.springframework.web: info
-zuul-address: http://192.168.0.116:9527/
+# zuul-address: http://192.168.0.116:9527/
+zuul-address: http://192.168.0.113:9527/
 security:
   basic:
     enabled: false
