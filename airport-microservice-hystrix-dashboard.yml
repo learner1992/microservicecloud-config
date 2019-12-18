@@ -13,7 +13,7 @@ spring:
     instance-id: airport-microservice-hystrix-dashboarad
     prefer-ip-address: true
   consul:
-    host: hadoop01
+    host: dn4.terminus.bds.com
     port: 8500
     discovery:
       register: true
