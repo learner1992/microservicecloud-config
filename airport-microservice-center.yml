@@ -22,7 +22,7 @@ spring:
     encoding: utf-8
   datasource:
     #    url: jdbc:mysql://47.107.235.26:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull
-    url: jdbc:mysql://dn4.terminus.bds.com:3306/maplecloudy?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://cm.terminus.bds.com:3306/maplecloudy?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull
     username: maplecloudy
     password: maplecloudy
     platform: h2
