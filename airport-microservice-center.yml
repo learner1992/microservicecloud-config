@@ -56,7 +56,7 @@ logging:
   level:
     root: info
     org.springframework.web: info
-zuul-address: http://hadoop01:9527/
+zuul-address: http://dn4.terminus.bds.com:9527/
 security:
   basic:
     enabled: false

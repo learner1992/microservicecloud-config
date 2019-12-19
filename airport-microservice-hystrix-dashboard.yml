@@ -21,4 +21,4 @@ spring:
       instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
       healthCheckPath: /actuator/health
       healthCheckInterval: 5s
-zuul-address: http://hadoop01:9527/
+zuul-address: http://dn4.terminus.bds.com:9527/
