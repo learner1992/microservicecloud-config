@@ -23,7 +23,7 @@ spring:
 feign:
   hystrix:
     enabled: true
-# zuul-address: http://hadoop01:9527/
+zuul-address: http://dn4.terminus.bds.com:9527/
 
 ---
 server:
