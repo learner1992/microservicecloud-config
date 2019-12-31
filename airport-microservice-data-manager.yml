@@ -42,36 +42,22 @@ spring:
 #   build.version: $project.version$
 ---
 server:
-  port: ${random.int[10000,10100]}
+  # port: ${random.int[10000,10100]}
+  port: 18091
+zuul-address: http://192.168.0.116:9527/
 spring:
-  profiles: test
+  profiles: dev
   application:
     name: airport-microservice-data-manager
   instance:
     instance-id: airport-microservice-data-manager
     prefer-ip-address: true
   consul:
-    host: localhost
+    host: 192.168.0.113
     port: 8500
     discovery:
       register: true
       prefer-ip-address: true
       instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
       healthCheckPath: /actuator/health
-
-zuul:
-  routes:
-    # user-service:
-    #   path: /microservicecloud-dept/**
-    #   serviceId: user-service2
-    mydept.serviceId: airport-microservice-data-manager
-    mydept.path: /data/**
-  ignored-services: '*'
-  #公共前缀
-  prefix: /airport
-
-# info:
-#   app.name: airport-microservice-gateway
-#   company.name: www.maplecloudy.com
-#   build.artifactId: $project.artifactId$
-#   build.version: $project.version$
+      healthCheckInterval: 5s
