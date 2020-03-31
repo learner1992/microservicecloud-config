@@ -13,7 +13,7 @@ spring:
     config:
       fail-fast: true
     consul:
-      host: hadoop01
+      host: 10.0.0.242
       port: 8500
       discovery:
         instanceId: ${spring.application.name}:${server.port}:${random.value}
@@ -22,7 +22,7 @@ spring:
 feign:
   hystrix:
     enabled: true
-zuul-address: http://hadoop01:9527/
+zuul-address: http://dn1.aws.maplecloudy.bds.com:9527/
 
 ---
 server:

@@ -11,7 +11,7 @@ spring:                   #业务名字
     name: airport-turbine
   cloud:
     consul:
-      host: hadoop01
+      host: 10.0.0.242
       port: 8500
       discovery:
         register: true
@@ -48,5 +48,5 @@ management:
 logging:
   level:
     root: INFO
-zuul-address: http://hadoop01:9527/
+zuul-address: http://dn1.aws.maplecloudy.bds.com:9527/
 

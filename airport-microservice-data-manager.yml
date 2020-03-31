@@ -6,7 +6,7 @@ spring:
 server:
   # port: ${random.int[10000,10100]}
   port: 18091
-zuul-address: http://hadoop01:9527/
+zuul-address: http://dn1.aws.maplecloudy.bds.com:9527/
 spring:
   profiles: dev
   application:
@@ -15,7 +15,7 @@ spring:
     instance-id: airport-microservice-data-manager
     prefer-ip-address: true
   consul:
-    host: hadoop01
+    host: 10.0.0.242
     port: 8500
     discovery:
       register: true
@@ -46,7 +46,7 @@ server:
   port: 18091
 zuul-address: http://192.168.0.116:9527/
 spring:
-  profiles: dev
+  profiles: test
   application:
     name: airport-microservice-data-manager
   instance:
