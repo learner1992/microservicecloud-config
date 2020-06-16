@@ -47,7 +47,7 @@ spring:
         hbm2ddl:
           auto: update
         enable_lazy_load_no_trans: true
-        show_sql: false
+        show_sql: true
     show-sql: true
     open-in-view: false
 server:
