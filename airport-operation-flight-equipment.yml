@@ -4,7 +4,8 @@ spring:
     - dev 
 ---
 server:
-  port: 18170
+  # port: 18170
+  port: ${random.int[10200,10300]}
 spring:
   profiles: dev
   application:

@@ -4,8 +4,8 @@ spring:
     - dev 
 ---
 server:
-  # port: ${random.int[10000,10100]}
-  port: 18091
+  port: ${random.int[10000,10100]}
+  # port: 18091
 zuul-address: http://dn1.aws.maplecloudy.bds.com:9527/
 spring:
   profiles: dev
