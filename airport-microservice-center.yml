@@ -21,7 +21,7 @@ spring:
     basename: i18n/messages
     encoding: utf-8
   datasource:
-    url: jdbc:mysql://nn2.bid.bds.com:3306/maplecloudy?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://dn1.bid.bds.com:3306/maplecloudy?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull
     username: maplecloudy
     password: Rsjxfyyyzf2019
     platform: h2
